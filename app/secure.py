@@ -13,10 +13,10 @@ MAIL_SERVER = 'smtp.exmail.qq.com'
 MAIL_PORT = 465
 MAIL_USE_SSL = True
 MAIL_USE_TSL = False
-MAIL_USERNAME = 'hello@yushu.im'
-MAIL_PASSWORD = 'Bmwzy1314520'
-MAIL_SUBJECT_PREFIX = '[鱼书]'
-MAIL_SENDER = '鱼书 <hello@yushu.im>'
+MAIL_USERNAME = ''
+MAIL_PASSWORD = ''
+MAIL_SUBJECT_PREFIX = ''
+MAIL_SENDER = ''
 
 
 # 开启数据库查询性能测试

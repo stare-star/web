@@ -1,24 +1,19 @@
-from flask import render_template, redirect, current_app, g
-from flask import request, flash, url_for
-from flask_login import login_user, login_required, logout_user, current_user
-from flask_sqlalchemy import get_debug_queries
-
-from . import web
 from app.forms.auth import RegisterForm, LoginForm, ResetPasswordForm, EmailForm, \
     ChangePasswordForm
-from app.models.user import User
-from app.models import db
 from app.libs.emails import send_email
+from app.models import db
+from app.models.user import User
+from flask import render_template, redirect, g
+from flask import request, flash, url_for
+from flask_login import login_user, login_required, logout_user, current_user
 
-__author__ = '七月'
+from . import web
 
 
 @web.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm(request.form)
-    print (11111111111111111)
     if request.method == 'POST' and form.validate():
-        print(222222222222222222)
         user = User()
         user.set_attrs(form.data)
         db.session.add(user)

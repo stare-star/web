@@ -6,6 +6,11 @@ def is_isbn_or_key(word):
         return 'isbn'
     return 'keyword'
 
+def is_code_or_key(word):
+    if len(word) == 32:
+        return 'code'
+
+    return 'keyword'
 
 def get_isbn(data_dict):
     isbn = data_dict.get('isbn')

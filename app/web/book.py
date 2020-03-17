@@ -1,17 +1,17 @@
 # from app.view_models.trade import TradeInfo
+# from app.spider.yushu_book import YuShuBook
+from app.forms.book import SearchForm
+from app.libs.helper import is_isbn_or_key
+from app.view_models.book import BookViewModel, BookCollection
 from flask import render_template, flash, request
 from flask_login import current_user
 
 from . import web
-from app.libs.helper import is_isbn_or_key
-# from app.spider.yushu_book import YuShuBook
-from app.forms.book import SearchForm
-from app.view_models.book import BookViewModel, BookCollection
+
 
 # from app.models.gift import Gift
 # from app.models.wish import Wish
 #
-__author__ = '七月'
 
 
 @web.route('/book/search', methods=['Get', 'POST'])

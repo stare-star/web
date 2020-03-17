@@ -1,15 +1,15 @@
 '''
     创建应用程序，并注册相关蓝图
 '''
-from flask import Flask
-# from flask_wtf.csrf import CsrfProtect
-from flask_login import LoginManager
 from app.models.base import db
+from flask import Flask
 # from app.libs.emails import mail
 from flask_cache import Cache
+# from flask_wtf.csrf import CsrfProtect
+from flask_login import LoginManager
+
 # from app.libs.limiter import Limiter
 
-__author__ = '七月'
 
 login_manager = LoginManager()
 cache = Cache(config={'CACHE_TYPE': 'simple'})

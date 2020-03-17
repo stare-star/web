@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename = 'css/search-result.css')}}">
+{% endblock %}
+{% block content %}
+    {{ super() }}
+    <div style="margin-top:20px;" class="row flex-vertical-center">
+        <div class="col-md-6">
+            <span class="sub-title">搜索 <span class="space highlight"
+                                             id="keyword">{{ ents.keyword }}</span>的结果</span>
+        </div>
+
+    </div>
+    <hr>
+ {% for ent in ents.ents %}
+        <div class="row col-padding">
+
+                <div class="col-md-7 flex-vertical description-font">
+                    <span class="entname">{{ ent.entname }}:{{ ent.label}}</span>
+<!--{#                    <span>{{ ent.label}}</span>#}-->
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+
+    <div class="row">
+        <div class="flex-hor-center">
+            <ul class="pagination" id="pagination"></ul>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='3rd/jquery.twbsPagination.min.js') }}"></script>
+    <script src="{{ url_for('static', filename="js/util.js") }}"></script>
+    <script src="{{ url_for('static', filename='js/search_result.js') }}"></script>
+{% endblock %}

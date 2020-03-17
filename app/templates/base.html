@@ -2,7 +2,7 @@
 <html>
 
 {% block title %}
-    <title>鱼书</title>
+    <title>企业查询</title>
 {% endblock %}
 
 {% block head %}
@@ -19,13 +19,13 @@
 {% block navbar %}
     <div class="nav-self">
         <div style="padding-top: inherit" class="container">
-            <form class="form-inline" action="{{ url_for('web.search') }}" method="get">
+            <form class="form-inline" action="{{ url_for('web.entsearch') }}" method="get">
                 <div class="flex-vertical-center-height">
                     <div class="col-md-2">
                         <img src="{{url_for('static', filename='images/logo-yushu.png')}}"/>
                     </div>
                     <div style="margin-left:30px;" class="col-md-8 input-group">
-                        <input name="q" type="text" placeholder="ISBN、图书名称"
+                        <input name="q" type="text" placeholder="企业代码或分类"
                                class="form-control input-sm">
                         <span class="input-group-btn">
                             <input class="btn btn-search" type="submit" value="搜索"/>
@@ -49,7 +49,7 @@
                 <a style="margin-left: 40px;" href="{{ url_for('web.register') }}">注册</a>
             </div>
         {% else %}
-            <a href="{{ url_for('web.personal_center') }}">{{ current_user.nickname }}的鱼书</a>
+            <a href="{{ url_for('web.personal_center') }}">{{ current_user.nickname }}</a>
             <a style="margin-left: 40px;" href="{{ url_for('web.logout') }}">注销</a>
         {% endif %}
     </div>
@@ -76,6 +76,9 @@
 </div>
 <div id="footer" class="flex-hor-center">
     <span>© 2020-2020 XXX.com created by XX</span>
+     <span>
+        <a href="http://beian.miit.gov.cn/" target="_blank" >渝ICP备19001546号</a>
+     </span>
 </div>
 </body>
 

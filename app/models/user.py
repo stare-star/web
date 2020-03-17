@@ -1,21 +1,18 @@
-from app.libs.enums import PendingStatus
 # from app.models.drift import Drift
 # from app.models.gift import Gift
 # from app.models.wish import Wish
-from app.libs.helper import is_isbn_or_key
 
 __author__ = 'bliss'
 
+from app import login_manager
+from app.models.base import db, Base
 from flask import current_app
 from flask_login import UserMixin
-from werkzeug.security import generate_password_hash, check_password_hash
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
-from sqlalchemy import Column, ForeignKey, func
-from sqlalchemy import String, Unicode, DateTime, Boolean
-from sqlalchemy import SmallInteger, Integer, Float
-from sqlalchemy.orm import relationship
-from app.models.base import db, Base
-from app import login_manager
+from sqlalchemy import Column
+from sqlalchemy import Integer
+from sqlalchemy import String, Boolean
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
 class User(UserMixin, Base):
@@ -117,9 +114,9 @@ class User(UserMixin, Base):
     def summary(self):
         return dict(
             nickname=self.nickname,
-            beans=self.beans,
+            # beans=self.beans,
             email=self.email,
-            send_receive=str(self.send_counter) + '/' + str(self.receive_counter)
+            # send_receive=str(self.send_counter) + '/' + str(self.receive_counter)
         )
 
 @login_manager.user_loader
