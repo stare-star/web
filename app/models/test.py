@@ -1,7 +1,5 @@
-from sqlalchemy import Column, String, Integer, ForeignKey, Boolean
-from sqlalchemy.orm import relationship
-from app.models.base import Base
 from app.models.base import db
+from sqlalchemy import Column, Integer
 
 
 class Test(db.Model):
@@ -12,5 +10,8 @@ class Test(db.Model):
 
 class Test1():
     test = 0
+
+
+
 
 

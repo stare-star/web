@@ -3,6 +3,7 @@
     {{ super() }}
      <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
 {% endblock %}
+
 {% block content %}
 <div class="home-title" style="user-select: auto;">都在用的商业查询工具</div>
  <div class="input-group home-group -focus" style="user-select: auto;"><form autocomplete="off" onsubmit="return header.stopSubmit(event,true,'#home-main-search');" style="user-select: auto;"><div class="live-search-wrap -index" style="user-select: auto;"><input type="search" id="home-main-search" class="input -xl js-live-search-auto" wrap-class="-index" maxlength="50" click-selected="header.suggestToCompany" placeholder="请输入公司名称、老板姓名、品牌名称等" autocomplete="off" style="user-select: auto;"><ul class="live-search-content hidden" style="user-select: auto;"></ul></div></form><div class="input-group-btn btn -xl" onclick="header.search(true,'#home-main-search')" tyc-event-click="" tyc-event-ch="shouye.CompanySearch.Search" style="user-select: auto;"><span style="user-select: auto;">天眼一下</span></div></div>
